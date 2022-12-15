@@ -16,12 +16,28 @@ setNewRecipe("")
     <form name="create" onSubmit = {handleSubmit}>
       <table>
         <tbody>
+        <label htmlFor = "new recipe">New Recipe</label>
           <tr>
-            <td><input></input></td>
-            <td><input></input></td>
-            <td><input></input></td>
-            <td><input></input></td>
-            <td><input></input></td>
+          
+            <div className = "inputValues">
+              <textarea 
+              id="content"
+              name="content"
+              required = {true}
+              rows = {1}
+              columns = {3}
+              onChange = {handleNewRecipe}
+              value = {newRecipe}
+              />
+               <input id = "urlcontent"
+              type = "url"
+              name = "content"
+              required = {true}
+              onChange = {handleNewRecipe}
+              value = {newRecipe}
+              
+              />
+            </div>
             <td>
               <button type="submit">Create</button>
             </td>
