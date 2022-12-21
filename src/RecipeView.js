@@ -1,26 +1,16 @@
-import React from "react"
+import React from "react";
 
-
-function RecipeView({findRecipe, deleteRecipe}) {
-
-    const row = 
-        <tr key = {findRecipe}>
-            
-            <td id = "name">{findRecipe.name}</td>
-            <td id = "cuisine">{findRecipe.cuisine}</td>
-            <td id = "photo"><img alt="new" src = {findRecipe.photo} /></td>
-            <td id = "content_td"><p>{findRecipe.ingredients}</p></td>
-            <td id = "content_td"><p>{findRecipe.preparation}</p></td>
-            <td><button name = "delete" onClick = {() => deleteRecipe(findRecipe.name)}>Delete</button></td>
-        </tr> 
-        
-        
-    return (
-       <>
-            <tbody>{row}</tbody>
-            
-            </> 
+function RecipeView({deleteRecipe,  recipe}){
+    return(
+        <tr key={recipe}>
+            <td>{recipe.name}</td>
+            <td>{recipe.cuisine}</td>
+            <td><img alt={recipe.name} name="photo" src={recipe.photo}/></td>
+            <td className="content_td"><p>{recipe.ingredients}</p></td>
+            <td className="content_td"><p>{recipe.preparation}</p></td>
+            <td><button name="delete" onClick={deleteRecipe}>Delete</button></td>
+        </tr>
     )
 }
 
-export default RecipeView
+export default RecipeView;
